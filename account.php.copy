@@ -1,0 +1,5 @@
+<?php
+// make a copy of the file, rename it to account.php and insert the data you want to use.
+$_USERNAME = 'EINTRAGEN';
+$_PASSPHRASE = 'EINTRAGE';
+?>

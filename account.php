@@ -1,4 +1,0 @@
-<?php
-$_USERNAME = 'EINTRAGEN';
-$_PASSPHRASE = 'EINTRAGE';
-?>
