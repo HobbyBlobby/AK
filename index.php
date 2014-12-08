@@ -79,9 +79,10 @@
     }
     echo '
         <div style="top:2px;right:50px;position:fixed">
-            AKs im Wiki: <a href="https://vmp.ethz.ch/zapfwiki/index.php/SoSe11_Arbeitskreise">https://vmp.ethz.ch/zapfwiki/index.php/SoSe11_Arbeitskreise</a>
+			Welcome to the AK tool
         </div>
     ';
+//             AKs im Wiki: <a href="https://vmp.ethz.ch/zapfwiki/index.php/SoSe11_Arbeitskreise">https://vmp.ethz.ch/zapfwiki/index.php/SoSe11_Arbeitskreise</a>
 ?>
 <br clear="all">
 <div style="position:fixed;bottom:-0px;left:-0px;background-color:#10DA18; width:100%; height:30px;"></div>
