@@ -4,7 +4,7 @@
             <th style="text-align:right">AK 1</th>
             <th></th>
             <th style="text-align:left">AK 2</th>';
-    if($conditions !== NULL) {
+    if(isset($conditions) && $conditions !== NULL) {
         foreach($conditions as $cond) {
             $class = 'Ok';
             if(isset($table->unresolved[$cond[0]]) && isset($table->unresolved[$cond[1]]))

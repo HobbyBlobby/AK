@@ -14,7 +14,7 @@ class Table {
     var $unusedAKs = array();
     function Table() {
         for($i = 1; $i <= 5; ++$i)
-            $this->slots[$i] = &new Slot($i);
+            $this->slots[$i] = new Slot($i);
     }
     function draw() {
         if(empty($this->AKPositions)) return;
@@ -52,7 +52,7 @@ class Table {
 </table>';
     }
     function addAK($name) {
-        $ak = &new AK();
+        $ak = new AK();
         $ak->name = $name;
         array_push($this->AKs, $ak);
         return $ak;
