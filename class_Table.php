@@ -95,16 +95,18 @@ class Table {
             }
         }
         $aks = $nextAKs;
-        foreach($this->conditions as $cond) {
-            if(isset($countConds[$cond[0]]))
-                ++$countConds[$cond[0]];
-            else
-                $countConds[$cond[0]] = 1;
-            if(isset($countConds[$cond[1]]))
-                ++$countConds[$cond[1]];
-            else
-                $countConds[$cond[1]] = 1;
-        }
+        if(isset($this->conditions)) {
+			foreach($this->conditions as $cond) {
+				if(isset($countConds[$cond[0]]))
+					++$countConds[$cond[0]];
+				else
+					$countConds[$cond[0]] = 1;
+				if(isset($countConds[$cond[1]]))
+					++$countConds[$cond[1]];
+				else
+					$countConds[$cond[1]] = 1;
+			}
+		}
         if(!empty($countConds)) {
             rsort($countConds);
             foreach($countConds as $cond=>$count) {
@@ -155,16 +157,18 @@ class Table {
         return $slot;
     }
     function unresolvedDependencies() {
-        foreach($this->conditions as $cond) {
-            $ak1 = $this->akFromName($cond[0]);
-            $ak2 = $this->akFromName($cond[1]);
-            if($ak1 === NULL || $ak1->slot === NULL || $ak2 === NULL || $ak2->slot === NULL)
-                continue;
-            if($ak1->slot == $ak2->slot) {
-                $this->unresolved[$ak1->name] = $ak1;
-                $this->unresolved[$ak2->name] = $ak2;
-            }
-        }
+		if(isset($this->conditions)) {
+			foreach($this->conditions as $cond) {
+				$ak1 = $this->akFromName($cond[0]);
+				$ak2 = $this->akFromName($cond[1]);
+				if($ak1 === NULL || $ak1->slot === NULL || $ak2 === NULL || $ak2->slot === NULL)
+					continue;
+				if($ak1->slot == $ak2->slot) {
+					$this->unresolved[$ak1->name] = $ak1;
+					$this->unresolved[$ak2->name] = $ak2;
+				}
+			}
+		}
     }
     
     function first(&$array) {
